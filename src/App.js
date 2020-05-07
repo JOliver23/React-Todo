@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 
+
 const todos = [{
   task: "",
   complete: false,
@@ -27,7 +28,7 @@ class App extends React.Component {
       todos: this.state.todos.map(todo => {
         if(taskId === todo.id) {
           return {
-            ...todos,
+            ...todo,
             complete: !todos.complete
           };
         }
