@@ -1,17 +1,41 @@
 import React from 'react';
 
+const todos = [{
+  task: "",
+  date: "",
+  complete: false,
+  id: ""
+}]
+
 class App extends React.Component {
   // you will need a place to store your state in this component.
+  // design `App` to be the parent component of your application.
+  // this component is going to take care of state, and any change handlers you need to work with your state 
+
   constructor() {
     super();
     this.state ={
-      todos: ""
+      todos
     }
   }
 
-  // design `App` to be the parent component of your application.
+  toggleComplete = taskId => {
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if(taskId === todo.id) {
+          return {
+            ...todos,
+            complete: !todos.complete
+          };
+        }
+        return todo;
+      })
+    });
+  };
 
-  // this component is going to take care of state, and any change handlers you need to work with your state
+  
+
+
   render() {
     return (
       <div>
