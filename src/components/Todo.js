@@ -11,5 +11,7 @@ const Todo = props => {
         >
             <p>{props.todo.task}</p>
         </div>
-    )
-}
+    );
+};
+
+export default Todo;
