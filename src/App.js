@@ -2,7 +2,6 @@ import React from 'react';
 
 const todos = [{
   task: "",
-  date: "",
   complete: false,
   id: ""
 }]
@@ -33,7 +32,22 @@ class App extends React.Component {
     });
   };
 
-  
+  addTask = taskName => {
+    this.setState({
+      todos: [
+        ...this.state.todos,
+        { task: taskName, complete: false, id: Date.now()}
+      ]
+    });
+  };
+
+  clearCompleted = () => {
+    this.setState({
+      todos: this.state.todos.filter(task => {
+        return !task.complete
+      })
+    })
+  }
 
 
   render() {
