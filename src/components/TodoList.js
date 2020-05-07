@@ -15,5 +15,7 @@ const TodoList = props => {
             ))}
             <button className="clear-complete" onClick={props.clearCompleted}>Clear Completed</button>
         </div>
-    )
-}
+    );
+};
+
+export default TodoList;
